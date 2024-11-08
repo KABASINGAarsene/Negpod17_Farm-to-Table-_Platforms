@@ -23,6 +23,9 @@ Location Information
 Direct Contact Details
 
 Initialize project structure and setup database
-Set up basic project folder structure, initialized the database schema for storing farmer profiles, product details, and consumer information.
+- Set up basic project folder structure, initialized the database schema for storing farmer profiles, product details, and consumer information.
+
+Implement consumer login and authentication system
+- Added secure login feature for consumers, allowing them to access the app with unique identifiers. Implemented authentication checks to enhance security.
 
 
