@@ -34,4 +34,4 @@ Add farmer profiles and product listings display
 Optimized Performance: Backend optimizations ensure quick data loading, even as the number of farmers and products grows.
 
 General guide:
-When a consumer logs in to the app, they are asked for their names, and thereafter, the app displays the different products' categories to choose from along with their different pricing. 
+When a consumer logs in to the app, they are asked for their names, and thereafter, the app displays the different products' categories to browse from along with their respective prices per unit as well as the farmers' addresses.
