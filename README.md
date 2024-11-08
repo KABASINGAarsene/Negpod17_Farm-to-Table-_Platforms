@@ -30,3 +30,5 @@ Implement consumer login and authentication system
 
 Add farmer profiles and product listings display
 - Developed data structure to store and display farmer profiles and product listings. Created functionality to show product options and pricing to logged-in consumers.
+
+Optimized Performance: Backend optimizations ensure quick data loading, even as the number of farmers and products grows.
