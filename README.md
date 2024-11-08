@@ -28,4 +28,5 @@ Initialize project structure and setup database
 Implement consumer login and authentication system
 - Added secure login feature for consumers, allowing them to access the app with unique identifiers. Implemented authentication checks to enhance security.
 
-
+Add farmer profiles and product listings display
+- Developed data structure to store and display farmer profiles and product listings. Created functionality to show product options and pricing to logged-in consumers.
