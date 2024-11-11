@@ -37,4 +37,4 @@ General guide:
 When a consumer logs in to the app, they are asked for their names, and thereafter, the app displays the different products' categories to browse from along with their respective prices per unit as well as the farmers' addresses.
 The customer then proceeds to placing an order and an automated notification is sent right away.
 
-Done by Negpod(Live coding session group 17)
+Done by Negpod (Live coding session group 17).
