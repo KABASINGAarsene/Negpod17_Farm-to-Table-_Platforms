@@ -18,9 +18,19 @@ class Farmer(Person):
     def get_farmer_info():
         farmers_catalog = [
             Farmer('Peter', 'Kanombe', '0782548484', 'Apples', 200, 50),
-            Farmer('John', 'Busanza', '0788888821', 'Beans', 350, 100),
+            Farmer('John', 'Busanza', '0788888821', 'Beans', 350, "100 kg"),
             Farmer('Fred', 'Remera', '0799999934', 'Bananas', 100, 80),
-            Farmer('Gisa', 'Kimironko', '0788888888', 'Maize', 400, 200)
+            Farmer('Gisa', 'Kimironko', '0788888888', 'Maize', 400, "200 kg"),
+            Farmer('Alex', 'Kanombe', '0782548484', 'Apples', 150, 93),
+            Farmer('Martin', 'Gisozi', '0782548484', 'Bananas', 50,95),
+            Farmer('Karinijabo', 'Kimironko', '0782548484', 'Wheat', 200, "100 kg"),
+            Farmer('Yefuta', 'Remera', '0782548484', 'cucumber', 200, 59),
+            Farmer('Daniella', 'Kicukiro', '0782548484', 'Millet', 240, "125 kg" ),
+            Farmer('Irakoze ', 'Kabuga', '0782548484', 'Eggs', 100, 300),
+            Farmer('Iyera', 'Kacyiru', '0782548484', 'Cassava', 200, 60),
+            Farmer('Bizimana', 'Kibagabaga', '0782548484', 'Cabbage', 250, 70),
+            Farmer('Keza', 'Nyamirambo', '0782548484', 'Tomatoes', 50, 400),
+            Farmer('Sandrine', 'Gisozi', '0782548484', 'Brocolli', 300, 67),
         ]
         return farmers_catalog
 
@@ -60,8 +70,7 @@ def place_order(farmer_list):
             print("Invalid contact info! Please enter a valid contact number (10 digits, starting with 078 or 079).")
             customer_info = input("Enter your contact information: ").strip()
 
-    options = input(
-        f"Hello {customer_name}, would you like to place an order? (Enter 'Y' for Yes or 'N' for No): ").upper().strip()
+    options = input(f"Hello {customer_name}, would you like to place an order? (Enter 'Y' for Yes or 'N' for No): ").upper().strip()
 
     if options == "Y":
         while True:
@@ -73,23 +82,20 @@ def place_order(farmer_list):
             if choice == '1':
                 # Show the list of all farmers and their products
                 print("\nAvailable farmers and their products:")
-                print(
-                    f"{'ID':7} {'Name':<11} {'Location:':<13} {'Contacts':<13} {'Products':<15} {'Price (FRW)':<10} {'Stock':<10}")
+                print(f"{'ID':7} {'Name':<11} {'Location:':<13} {'Contacts':<13} {'Products':<15} {'Price (per unit or kg (FRW))':<10} {'Stock':<12}")
                 print('-' * 90)
                 for idx, farmer in enumerate(farmer_list):
-                    print(
-                        f"{idx + 1:<7} {farmer.name:<11} {farmer.location:<13} {farmer.contact_info:<13} {farmer.products:<15} {farmer.price:<10} {farmer.stock:<10}")
+                    print(f"{idx + 1:<7} {farmer.name:<11} {farmer.location:<13} {farmer.contact_info:<13} {farmer.products:<15} {farmer.price:<10} {farmer.stock:<12}")
 
                 # After showing the list, give the customer the option to purchase
-                purchase_option = input(
-                    "\nWould you like to proceed with purchasing a product? Enter 'Y' for Yes or 'N' to return to main menu: ").upper().strip()
+                purchase_option = input("\nWould you like to proceed with purchasing a product? Enter 'Y' for Yes or 'N' to return to main menu: ").upper().strip()
 
                 if purchase_option == 'Y':
                     while True:
-                        farmer_id = input(
-                            "\nEnter the ID of the farmer from the list that you would like to purchase from: ").strip()
+                        farmer_id = input("\nEnter the ID of the farmer from the list that you would like to purchase from: ").strip()
                         if farmer_id.isdigit() and 1 <= int(farmer_id) <= len(farmer_list):
                             selected_farmer = farmer_list[int(farmer_id) - 1]
+
 
                             print(f"\nFarmer Selected: {selected_farmer.name}")
                             print(f"Product: {selected_farmer.products}")
@@ -98,8 +104,7 @@ def place_order(farmer_list):
                             print(f"Contact: {selected_farmer.contact_info}")
 
                             while True:
-                                quantity = input(
-                                    "\nEnter the number of units you would like to purchase (or '0' to cancel): ").strip()
+                                quantity = input("\nEnter the number of units you would like to purchase (or '0' to cancel): ").strip()
                                 if quantity.isdigit():
                                     quantity = int(quantity)
                                     if quantity == 0:
@@ -115,8 +120,7 @@ def place_order(farmer_list):
                                         print(f"Total Cost: {total_cost} FRW")
                                         print(f"Contact: {selected_farmer.contact_info}")
 
-                                        confirm = input(
-                                            "\nDo you confirm this purchase? Enter 'Y' for Yes or 'N' to cancel: ").upper().strip()
+                                        confirm = input( "\nDo you confirm this purchase? Enter 'Y' for Yes or 'N' to cancel: ").upper().strip()
                                         if confirm == 'Y':
                                             selected_farmer.stock -= quantity
                                             print(
@@ -187,6 +191,7 @@ def place_order(farmer_list):
                                                     "\nDo you confirm this purchase? Enter 'Y' for Yes or 'N' to cancel: ").upper().strip()
                                                 if confirm == 'Y':
                                                     selected_farmer.stock -= quantity
+
                                                     print(
                                                         f"\nThank you for your purchase, {customer_name}! Your order has been placed.")
                                                     return
@@ -203,8 +208,7 @@ def place_order(farmer_list):
                             continue
                     else:
                         print("\nNo farmers currently offer that product.")
-                        retry = input(
-                            "\nWould you like to (1) Search again, (2) View all farmers, or (3) Exit to main menu? Enter your choice: ").strip()
+                        retry = input("\nWould you like to (1) Search again, (2) View all farmers, or (3) Exit to main menu? Enter your choice: ").strip()
                         if retry == '1':
                             continue
                         elif retry == '2':
@@ -238,6 +242,7 @@ def main():
     farmer_list = Farmer.get_farmer_info()
 
     while True:
+        print("WELCOME TO FARMER-TO-TABLE"),print("-"*25)
         print("1: Registering a new farmer")
         print("2: Place an order from a local farmer near you")
         print("3: Exit")
