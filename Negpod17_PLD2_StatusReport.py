@@ -217,8 +217,7 @@ def place_order(farmer_list):
                                 f"{'ID':7} {'Name':<11} {'Location:':<13} {'Contacts':<13} {'Products':<15} {'Price (FRW)':<10} {'Stock':<10}")
                             print('-' * 90)
                             for idx, farmer in enumerate(farmer_list):
-                                print(
-                                    f"{idx + 1:<7} {farmer.name:<11} {farmer.location:<13} {farmer.contact_info:<13} {farmer.products:<15} {farmer.price:<10} {farmer.stock:<10}")
+                                print(f"{idx + 1:<7} {farmer.name:<11} {farmer.location:<13} {farmer.contact_info:<13} {farmer.products:<15} {farmer.price:<10} {farmer.stock:<10}")
                             break
                         elif retry == '3':
                             return
