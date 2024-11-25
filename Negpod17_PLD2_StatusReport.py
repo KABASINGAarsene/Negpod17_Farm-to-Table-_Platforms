@@ -16,6 +16,7 @@ class Farmer(Person):
 
     @staticmethod
     def get_farmer_info():
+        # Catalog of farmers with sample data
         farmers_catalog = [
             Farmer('Peter', 'Kanombe', '0782548484', 'Apples', 200, 50),
             Farmer('John', 'Busanza', '0788888821', 'Beans', 350, "100 kg"),
