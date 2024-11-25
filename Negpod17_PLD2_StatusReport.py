@@ -73,6 +73,7 @@ def place_order(farmer_list):
             print("Invalid contact info! Please enter a valid contact number (10 digits, starting with 078 or 079).")
             customer_info = input("Enter your contact information: ").strip()
 
+    # Check if customer wants to place an order
     options = input(f"Hello {customer_name}, would you like to place an order? (Enter 'Y' for Yes or 'N' for No): ").upper().strip()
 
     if options == "Y":
