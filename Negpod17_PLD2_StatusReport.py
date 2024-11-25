@@ -55,6 +55,7 @@ def register_farmer():
     price = int(input("Enter the price for each unit: ").strip())
     stock = int(input("Enter the available stock quantity: ").strip())
 
+    # Create and return new Farmer object with collected information
     new_farmer = Farmer(name, location, contact_info, product, price, stock)
     return new_farmer
 
