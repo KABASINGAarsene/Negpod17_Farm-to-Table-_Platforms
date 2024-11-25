@@ -37,6 +37,7 @@ class Farmer(Person):
 
 
 def register_farmer():
+    # Function to register a new farmer in the system
     print("Registration of a new farmer")
     name = input("Enter your name: ").strip()
     location = input("Enter your location: ").strip()
