@@ -196,8 +196,7 @@ def place_order(farmer_list):
                                                 if confirm == 'Y':
                                                     selected_farmer.stock -= quantity
 
-                                                    print(
-                                                        f"\nThank you for your purchase, {customer_name}! Your order has been placed.")
+                                                    print(  f"\nThank you for your purchase, {customer_name}! Your order has been placed.")
                                                     return
                                                 else:
                                                     print("\nOrder canceled. Returning to the main menu.")
