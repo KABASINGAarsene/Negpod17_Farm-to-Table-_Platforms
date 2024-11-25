@@ -6,7 +6,7 @@ class Person:
         self.contact_info = contact_info
 
 
-
+# Farmer class inherits from Person
 class Farmer(Person):
     def __init__(self, name, location, contact_info, products, price, stock):
         super().__init__(name, location, contact_info)
