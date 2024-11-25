@@ -1,4 +1,4 @@
-
+# Base class representing any person
 class Person:
     def __init__(self, name, location, contact_info):
         self.name = name
