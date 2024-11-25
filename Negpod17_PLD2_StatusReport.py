@@ -6,7 +6,7 @@ class Person:
         self.contact_info = contact_info
 
 
-
+# Farmer class inherits from Person
 class Farmer(Person):
     def __init__(self, name, location, contact_info, products, price, stock):
         super().__init__(name, location, contact_info)
@@ -16,6 +16,7 @@ class Farmer(Person):
 
     @staticmethod
     def get_farmer_info():
+        # Catalog of farmers with sample data
         farmers_catalog = [
             Farmer('Peter', 'Kanombe', '0782548484', 'Apples', 200, 50),
             Farmer('John', 'Busanza', '0788888821', 'Beans', 350, "100 kg"),
@@ -36,6 +37,7 @@ class Farmer(Person):
 
 
 def register_farmer():
+    # Function to register a new farmer in the system
     print("Registration of a new farmer")
     name = input("Enter your name: ").strip()
     location = input("Enter your location: ").strip()
@@ -53,6 +55,7 @@ def register_farmer():
     price = int(input("Enter the price for each unit: ").strip())
     stock = int(input("Enter the available stock quantity: ").strip())
 
+    # Create and return new Farmer object with collected information
     new_farmer = Farmer(name, location, contact_info, product, price, stock)
     return new_farmer
 
@@ -70,6 +73,7 @@ def place_order(farmer_list):
             print("Invalid contact info! Please enter a valid contact number (10 digits, starting with 078 or 079).")
             customer_info = input("Enter your contact information: ").strip()
 
+    # Check if customer wants to place an order
     options = input(f"Hello {customer_name}, would you like to place an order? (Enter 'Y' for Yes or 'N' for No): ").upper().strip()
 
     if options == "Y":
